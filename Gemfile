@@ -36,3 +36,24 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'haml'
+
+group :test do
+	gem "rspec-rails"
+	gem "factory_girl_rails"
+	gem 'cucumber-rails'
+	gem 'rb-fsevent'
+	gem 'guard-spork'
+	gem 'guard-rspec'
+	gem 'guard-cucumber'
+	gem 'database_cleaner'
+	gem 'growl'
+	gem 'spork'
+end
+
+group :development do
+  gem "capybara"
+  
+  # gem 'nokogiri'
+end
