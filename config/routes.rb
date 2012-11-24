@@ -1,4 +1,10 @@
 Railszor::Application.routes.draw do
+
+  devise_for :users
+
+  root :to => "journal_entries#index"
+
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
