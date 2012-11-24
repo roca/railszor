@@ -40,20 +40,14 @@ gem 'jquery-rails'
 gem 'haml'
 
 group :test do
+	gem 'cucumber-rails', :require => false
 	gem "rspec-rails"
 	gem "factory_girl_rails"
-	gem 'cucumber-rails'
-	gem 'rb-fsevent'
+	gem "capybara"
 	gem 'guard-spork'
 	gem 'guard-rspec'
 	gem 'guard-cucumber'
+	gem 'rb-fsevent'
 	gem 'database_cleaner'
-	gem 'growl'
 	gem 'spork'
-end
-
-group :development do
-  gem "capybara"
-  
-  # gem 'nokogiri'
 end
