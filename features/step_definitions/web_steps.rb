@@ -141,11 +141,7 @@ When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
-  if response.respond_to? :should
-    response.should contain(text)
-  else
-    assert_contain text
-  end
+  assert page.has_content?(text)
 end
 
 Then /^(?:|I )should see "([^"]*)" within "([^"]*)"$/ do |text, selector|

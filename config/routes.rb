@@ -2,6 +2,8 @@ Railszor::Application.routes.draw do
 
   devise_for :users
 
+  #resources :journal_entries
+
   root :to => "journal_entries#index"
 
   
