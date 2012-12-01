@@ -5,8 +5,13 @@ Feature: Authentication
 
 	Scenario: Signup
 		Given I am on the sign_up page
-		When I fill in "Bertram@gmail.com" for "Email"
-		And I fill in "123456" for "user_password"
-		And I fill in "123456" for "user_password_confirmation"
+		When I fill in the following:
+			|Email						|Bertram@gmail.com|
+			|user_password  			|123456           |
+			|user_password_confirmation	|123456           |
 		And I press "Sign up"
 		Then I should see "Welcome! You have signed up successfully."
+
+	Scenario: Login
+		Given a valid user
+		When I go to the login page
