@@ -149,6 +149,7 @@ Then /^(?:|I )should see "([^"]*)" within "([^"]*)"$/ do |text, selector|
     if content.respond_to? :should
       content.should contain(text)
     else
+      true
       hc = Webrat::Matchers::HasContent.new(text)
       assert hc.matches?(content), hc.failure_message
     end

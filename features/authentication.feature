@@ -15,3 +15,8 @@ Feature: Authentication
 	Scenario: Login
 		Given a valid user
 		When I go to the login page
+		And I fill in the following:
+			|Email						|Bertram@gmail.com|
+			|user_password  			|123456           |
+		When I press "Sign in"
+		Then I should see "Signed in successfully."
