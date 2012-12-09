@@ -4,4 +4,6 @@ class JournalEntriesController < ApplicationController
 		@month = date.month
 		@year = date.year
 	end
+	def show
+	end
 end
