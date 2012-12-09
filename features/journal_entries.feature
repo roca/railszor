@@ -7,3 +7,4 @@ Feature: Managing journal entries
 		Given a logged in user
 		When I go to the home page
 		Then the calendar should show the current month
+		And the page should have links to journal_entries for all days of month

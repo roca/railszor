@@ -8,6 +8,8 @@ Railszor::Application.routes.draw do
 
   root :to => "journal_entries#index"
 
+  resources :journal_entries
+
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
