@@ -145,15 +145,9 @@ Then /^(?:|I )should see "([^"]*)"$/ do |text|
 end
 
 Then /^(?:|I )should see "([^"]*)" within "([^"]*)"$/ do |text, selector|
-  within(selector) do |content|
-    if content.respond_to? :should
-       assert page.has_content?(text)
-    else
-      true
-      hc = Webrat::Matchers::HasContent.new(text)
-      assert hc.matches?(content), hc.failure_message
-    end
-  end
+  
+    assert page.has_selector?(selector,:text => text)  
+  
 end
 
 Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|

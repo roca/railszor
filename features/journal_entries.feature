@@ -11,6 +11,7 @@ Feature: Managing journal entries
 		Then the calendar should show the current month
 		And the page should have links to "journal_entries" for all days of the month
 
-
 	Scenario: View a single entry
 		When I go to a journal entry page
+		Then I should see "Sunday" within "h1"
+		And the record should belong to the current user

@@ -14,3 +14,9 @@ Then /^the page should have links to (.+) for all days of the month$/ do |url|
     end
 end
 
+
+Then /^the record should belong to the current user$/ do
+  journal_entry = @user.journal_entries.find_by_date("2010-10-10".to_date)
+  journal_entry.should_not be_nil
+end
+
