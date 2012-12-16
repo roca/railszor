@@ -229,11 +229,7 @@ end
 
 Then /^the "([^"]*)" checkbox should be checked$/ do |label|
   field = field_labeled(label)
-  if field.respond_to? :should
-    field.should be_checked
-  else
-    assert field.checked?
-  end
+  assert page.has_checked_field?(label)
 end
 
 Then /^the "([^"]*)" checkbox should not be checked$/ do |label|

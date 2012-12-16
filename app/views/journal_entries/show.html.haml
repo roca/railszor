@@ -5,11 +5,15 @@
 
 %h1
 	= @journal_entry.weekday_name
-
 	%ul
 		- @journal_entry.errors.full_messages.each do |msg|
 			%li = msg
-
 	= form_for @journal_entry do |f|
 		= f.label :notes
 		= f.text_area :notes
+
+		%fieldset
+			%legend Rating
+			- (1..5).each do |rating_number|
+				= f.label "rating_#{rating_number}", rating_number
+				= f.radio_button :rating, rating_number, {:checked => 'checked'}

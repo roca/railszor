@@ -23,3 +23,4 @@ Feature: Managing journal entries
 			|date|2010-10-10|
 		When I go to a journal entry page for "2010-10-10"
 		Then the "Notes" field should contain "A close shave"
+		And the "5" checkbox should be checked
