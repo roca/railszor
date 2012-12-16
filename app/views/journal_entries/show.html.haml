@@ -5,3 +5,11 @@
 
 %h1
 	= @journal_entry.weekday_name
+
+	%ul
+		- @journal_entry.errors.full_messages.each do |msg|
+			%li = msg
+
+	= form_for @journal_entry do |f|
+		= f.label :notes
+		= f.text_area :notes

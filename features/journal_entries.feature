@@ -12,6 +12,14 @@ Feature: Managing journal entries
 		And the page should have links to "journal_entries" for all days of the month
 
 	Scenario: View a single entry
-		When I go to a journal entry page
+		When I go to a journal entry page for "2010-10-10"
 		Then I should see "Sunday" within "h1"
-		And the record should belong to the current user
+		And the record should belong to the current user for "2010-10-10"
+
+	Scenario: View a prepopulated entry
+		Given an existing journal entry record with the following data:
+			|notes|A close shave|
+			|rating|5|
+			|date|2010-10-10|
+		When I go to a journal entry page for "2010-10-10"
+		Then the "Notes" field should contain "A close shave"

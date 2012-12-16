@@ -14,9 +14,9 @@ module NavigationHelpers
       new_user_registration_path
     when /the login page/
       user_session_path
-    when /a journal entry page/
+    when /a journal entry page for "(\d{4}-\d{2}-\d{2})"/
       # Hard-coded to a specific date to make testing easier
-      journal_entry_path('2010-10-10')
+      journal_entry_path($1)
     when /my list of nicks for "(\d{4}-\d{2}-\d{2})"/
       formatted_nick_path($1, :json)
 

@@ -15,8 +15,13 @@ Then /^the page should have links to (.+) for all days of the month$/ do |url|
 end
 
 
-Then /^the record should belong to the current user$/ do
-  journal_entry = @user.journal_entries.find_by_date("2010-10-10".to_date)
+Then /^the record should belong to the current user for "(.*?)"$/ do |date_string|
+  journal_entry = @user.journal_entries.find_by_date(date_string.to_date)
   journal_entry.should_not be_nil
 end
+
+Given /^an existing journal entry record with the following data:$/ do |table|
+  @journal_entry = @user.journal_entries.create!(table.rows_hash)
+end
+
 
