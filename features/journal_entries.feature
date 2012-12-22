@@ -24,3 +24,11 @@ Feature: Managing journal entries
 		When I go to a journal entry page for "2010-10-10"
 		Then the "Notes" field should contain "A close shave"
 		And the "5" checkbox should be checked
+		And the "4" checkbox should not be checked
+
+	Scenario: Enter new information in the form
+		Given I go to a journal entry page for "2010-10-10"
+		When I fill in "Sharp as the blues" for "Notes"
+		And I choose "3"
+		Then show me the page
+		And I press "Save"

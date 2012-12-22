@@ -16,4 +16,8 @@
 			%legend Rating
 			- (1..5).each do |rating_number|
 				= f.label "rating_#{rating_number}", rating_number
-				= f.radio_button :rating, rating_number, {:checked => 'checked'}
+				-if (rating_number == 5)
+					= f.radio_button :rating, rating_number, {:checked => 'checked'}
+				-else
+					= f.radio_button :rating, rating_number
+		= submit_tag "Save"

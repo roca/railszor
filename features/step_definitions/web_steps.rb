@@ -234,11 +234,7 @@ end
 
 Then /^the "([^"]*)" checkbox should not be checked$/ do |label|
   field = field_labeled(label)
-  if field.respond_to? :should_not
-    field.should_not be_checked
-  else
-    assert !field.checked?
-  end
+  assert page.has_no_checked_field?(label)
 end
 
 Then /^(?:|I )should be on (.+)$/ do |page_name|
