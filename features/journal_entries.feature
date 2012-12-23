@@ -32,3 +32,8 @@ Feature: Managing journal entries
 		And I choose "3"
 		Then show me the page
 		And I press "Save"
+		Then the user's journal entry for "2010-10-10" should have the following values:
+			|key|value|transform|
+			|date|2010-10-10|to_date|
+			|notes|Sharp as the blues|to_s|
+			|rating|3|to_i|
